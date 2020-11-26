@@ -36,6 +36,7 @@ public class ImageHolder extends RecyclerView.ViewHolder implements View.OnClick
     private void openImageDetail(Context context,int position) {
         FragmentTransaction ft = ((FragmentActivity)context).getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.fragment_container, new ImageDetailFragment(position));
+        ft.addToBackStack("Image");
         ft.commit();
     }
 }
