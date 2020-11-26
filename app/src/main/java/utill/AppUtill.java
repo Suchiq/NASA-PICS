@@ -20,8 +20,12 @@ public class AppUtill {
 
     public static void showImage(String imageURI, ImageView imageView) {
         Log.d("imgUrl", imageURI);
+
         Picasso.get()
                 .load(imageURI)
+                .fit()
+                .centerCrop()
+                .placeholder(R.drawable.progress_animator)
                 .into(imageView);
     }
 
