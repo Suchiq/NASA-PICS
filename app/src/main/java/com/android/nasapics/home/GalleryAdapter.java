@@ -30,6 +30,7 @@ public class GalleryAdapter extends RecyclerView.Adapter<ImageHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ImageHolder holder, int position) {
+        holder.img.setTag(position);
         AppUtill.showImage(arrData.get(position).getUrl(),holder.img);
     }
 

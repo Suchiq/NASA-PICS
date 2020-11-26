@@ -12,6 +12,7 @@ import com.squareup.picasso.Picasso;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -81,6 +82,18 @@ public class AppUtill {
             e.printStackTrace();
         }
 
+        return arrData;
+    }
+
+    public static ArrayList<ImageData> getPagerDetailData(int position, Context context) {
+        ArrayList<ImageData> arrData = new ArrayList<>();
+        arrData.add(AppUtill.getData(context).get(position));
+        for (int i = 0; i < AppUtill.getData(context).size(); i++) {
+            if (i != position) {
+                arrData.add(AppUtill.getData(context).get(i));
+            }
+
+        }
         return arrData;
     }
 }

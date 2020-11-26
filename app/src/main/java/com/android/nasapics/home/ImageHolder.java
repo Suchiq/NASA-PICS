@@ -28,14 +28,14 @@ public class ImageHolder extends RecyclerView.ViewHolder implements View.OnClick
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.img:
-                openImageDetail(context);
+                openImageDetail(context,(Integer)view.getTag());
                 break;
         }
     }
 
-    private void openImageDetail(Context context) {
+    private void openImageDetail(Context context,int position) {
         FragmentTransaction ft = ((FragmentActivity)context).getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.fragment_container, new ImageDetailFragment());
+        ft.replace(R.id.fragment_container, new ImageDetailFragment(position));
         ft.commit();
     }
 }
