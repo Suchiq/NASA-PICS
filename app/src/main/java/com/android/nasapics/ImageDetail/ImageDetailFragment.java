@@ -1,4 +1,6 @@
 package com.android.nasapics.ImageDetail;
 
-public class ImageDetailFragment {
+import androidx.fragment.app.Fragment;
+
+public class ImageDetailFragment extends Fragment {
 }
